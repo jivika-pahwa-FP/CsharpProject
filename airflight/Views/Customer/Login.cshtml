@@ -1,0 +1,38 @@
+@model airflight.Models.CustomerDetail
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h3>User Login</h3>
+
+<hr />
+<div class="row">
+    <img src="~/image/flight3.jpg" alt="flight" width="400" height="300" align="right">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Customerid" class="control-label"></label>
+                <input asp-for="Customerid" class="form-control" placeholder="Enter ID " />
+                <span asp-validation-for="Customerid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input input type="password" asp-for="Password" class="form-control" placeholder="Enter Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Registeration">Back</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

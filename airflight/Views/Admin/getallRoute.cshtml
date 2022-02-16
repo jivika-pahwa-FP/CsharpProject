@@ -1,0 +1,50 @@
+@model IEnumerable<airflight.Models.RouteDetail>
+
+@{
+    ViewData["Title"] = "getallRoute";
+    Layout="/Views/Admin/layout.cshtml";
+}
+
+<h2>Welcome @ViewBag.username</h2>
+<h2>Flight Routes</h2>
+
+<p>
+   <button class="btn btn-warning"><a asp-action="CreateRoute" style="color:white;">Create New</a> </button> 
+    <button class="btn btn-danger"> <a asp-action="Logout" style="color:white;">Logout</a> </button>
+</p>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Routeid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flightid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Routedesc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Routeid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flightid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Routedesc)
+            </td>
+            <td>
+              <button class="btn btn-warning">@Html.ActionLink("Edit", "EditRoute", new {  style="color:#FFF",  id=item.Routeid }) </button>
+              <button class="btn btn-info"> @Html.ActionLink("Details", "DetailRoute", new { id=item.Routeid  }) </button> 
+              <button class="btn btn-danger"> @Html.ActionLink("Delete", "DeleteRoute", new { id=item.Routeid  }) </button> 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

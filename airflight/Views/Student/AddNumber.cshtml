@@ -1,0 +1,24 @@
+<h1> Add Numbers </h1>
+<div>
+
+    <form asp-action="AddNumber">
+        <div>
+            <asp:label>First Number</asp:label>
+            <input name="first" id="first" />
+        </div>
+        <br><br>
+        <div>
+            <asp:label>Second Number</asp:label>
+            <input name="second" id="second" />
+        </div> 
+        <br><br>
+        <input type="submit" value="Add" id="" />
+    </form>
+    @{
+        if(ViewBag.result != null){
+            <h4>The result is : @ViewBag.result</h4>
+        }
+    }
+    
+<a asp-action="Logout">Logout</a>
+</div>

@@ -1,0 +1,60 @@
+@model IEnumerable<gradecardmvc.Models.TeacherTable>
+
+@{
+    ViewData["Title"] = "getAllFaculty";
+        Layout = "./Layout.cshtml";
+
+}
+
+<style>
+    h2,table{
+        font-family: 'Times new roman';
+        font-weight:bold;
+    }
+    body{
+        background-color: #E8E8E8;
+    }
+
+</style>
+
+<h2 style="color:purple">Welcome @ViewBag.facultyName</h2>
+<h2 style="color:dodgerBlue">Manage Faculty Profile</h2>
+
+<p>
+   <button class="btn btn-warning"> <a asp-action="CreateFaculty" style="color:white;">Add Faculty</a> </button>
+   <button class="btn btn-danger"> <a asp-action="Logout" style="color:white;">Logout</a> </button>
+</p>
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            
+            <td>
+                <button class="btn btn-default" style="border-color:orange"> @Html.ActionLink("Edit", "EditFaculty", new { id=item.Id })  </button>
+                <button class="btn btn-default" style="border-color:lightblue"> @Html.ActionLink("Details", "DetailFaculty", new { id=item.Id })  </button>
+                <button class="btn btn-default" style="border-color:red"> @Html.ActionLink("Delete", "DeleteFaculty", new { id=item.Id })  </button>
+            </td>
+
+        </tr>
+}
+    </tbody>
+</table>

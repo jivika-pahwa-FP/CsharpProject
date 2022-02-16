@@ -1,0 +1,61 @@
+@model gradecardmvc.Models.TeacherTable
+
+@{
+    ViewData["Title"] = "EditFaculty";
+            Layout = "./Layout.cshtml";
+
+}
+
+<style>
+    h2,form{
+        font-family: 'Times new roman';
+        font-weight:bold;
+        color: white;
+    }
+    body{
+        background-image: url("/image/background4.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    a{
+        color:white;
+    }
+
+</style>
+<h2>Edit Faculty Profile</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditFaculty">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" placeholder="Enter Faculty ID" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" placeholder="Enter Faculty Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" placeholder="Enter Faculty Password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="getAllFaculty">Go to Faculty List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

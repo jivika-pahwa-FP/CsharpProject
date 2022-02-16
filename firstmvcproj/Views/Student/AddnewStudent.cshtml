@@ -1,0 +1,22 @@
+@model firstmvcproj.Models.Stu
+<h1>Add New Student</h1>
+
+<div>
+     <form asp-action="AddnewStudent">
+    <div class="form-group">
+      <label asp-for="stud_id">Student ID</label>
+      <input  asp-for="stud_id" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label asp-for="stud_name">Student Name</label>
+      <input  asp-for="stud_name" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label asp-for="stud_age">Student Age</label>
+      <input  asp-for="stud_age" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-warning">Submit</button>
+  </form>
+
+<h5><a asp-action="GetStudentDetails">Go Back</a></h5>
+</div>

@@ -1,0 +1,43 @@
+@model airflight.Models.RouteDetail
+
+@{
+    ViewData["Title"] = "CreateRoute";
+    Layout="/Views/Admin/layout.cshtml";
+}
+
+<h3>Add a Route</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateRoute">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Routeid" class="control-label"></label>
+                <input asp-for="Routeid" class="form-control" placeholder="Enter Route ID"/>
+                <span asp-validation-for="Routeid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flightid" class="control-label"></label>
+                <input asp-for="Flightid" class="form-control" placeholder="Enter Flight ID"/>
+                <span asp-validation-for="Flightid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routedesc" class="control-label"></label>
+                <input asp-for="Routedesc" class="form-control" placeholder="Enter Route source - to - destination"/>
+                <span asp-validation-for="Routedesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="getallRoute">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

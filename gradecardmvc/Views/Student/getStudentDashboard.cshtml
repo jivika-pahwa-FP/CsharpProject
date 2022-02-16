@@ -1,0 +1,41 @@
+@model gradecardmvc.Models.StudentTable
+
+@{
+    ViewData["Title"] = "getAllStudent";
+    Layout = "./Layout.cshtml";
+}
+<style>
+    h2,h3{
+        font-family: 'Times new roman';
+        font-weight:bold;
+        text-align: center;
+    }
+    body{
+        background-image: url("/image/background2.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    
+</style>
+<br><br>
+<div class="container">
+<div class="panel panel-info">
+
+            <div class="panel-heading">
+                <h2 style="color:purple">Welcome to Student DashBoard</h2>
+            </div>
+
+            <div class="panel-body">
+        
+                <h3 style="color:dodgerBlue">StudentID :  @ViewBag.StudentName, Manage your Work</h3>
+                <br><br>
+                       <center>
+                <button class="btn btn-default" style="border-color:red"> @Html.ActionLink("Submit Assignment", "SubmitAssignment", new { id=@Model.Id })  </button>
+                <button class="btn btn-default" style="border-color:blue"> @Html.ActionLink("Grade Card", "GradeCard", new { id=@Model.Id })  </button>               
+                 <button class="btn btn-default" style="border-color:orange"> @Html.ActionLink("Logout", "Logout")  </button>
+
+                        </center> 
+            </div>
+            </div>
+</div>

@@ -1,0 +1,18 @@
+@model gradecardmvc.Models.StudentTable
+<h2>check here </h2>
+
+
+<form asp-action="Check">
+
+<input asp-for="Name" placeholder="enter your name">
+
+<input type="submit" value="submit">
+
+</form>
+
+<h2>
+    @if( ViewBag.result != null){
+        <p>@ViewBag.result</p>
+    }
+    </h2>
+

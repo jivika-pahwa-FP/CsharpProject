@@ -1,0 +1,72 @@
+@model gradecardmvc.Models.StudentTable
+
+@{
+    ViewData["Title"] = "getGradeCard";
+    Layout = "./Layout.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <style>
+        h3 {
+        font-family: 'Courier New';
+        color:purple;
+        font-weight:bold;
+        }
+        body{
+        background-image: url("/image/background3.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    a{
+        color: white;
+    }
+      
+    </style>
+
+<br><br>
+<div class="container">
+
+        <div class="panel panel-danger">
+
+            <div class="panel-heading"> <h3> StudentID :  @ViewBag.StudentName, your Grade Card</h3> </div>
+
+            <div class="panel-body">
+                
+                @Html.DisplayNameFor(model => model.Id) :  @Html.DisplayFor(modelItem => Model.Id)
+                 <br>
+                @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(modelItem => Model.Name)
+                <br>
+                @Html.DisplayNameFor(model => model.Subject1) - @Html.DisplayFor(modelItem => Model.Subject1)
+                <br>
+                @Html.DisplayNameFor(model => model.Subject2) - @Html.DisplayFor(modelItem => Model.Subject2)
+                <br>
+                @Html.DisplayNameFor(model => model.Subject3) -  @Html.DisplayFor(modelItem => Model.Subject3)
+                <br>
+                @Html.DisplayNameFor(model => model.Percentage) - @Html.DisplayFor(modelItem => Model.Percentage)
+                <br>
+                @Html.DisplayNameFor(model => model.Grade) - @Html.DisplayFor(modelItem => Model.Grade)
+
+          </div>
+          </div>
+
+</div>
+
+<div>
+    @* Status : @ViewBag.status *@
+    <a asp-action="getStudentDashboard" asp-route-id=@Model.Id>Back to Dashboard</a>
+</div>
+</body>
+</html>

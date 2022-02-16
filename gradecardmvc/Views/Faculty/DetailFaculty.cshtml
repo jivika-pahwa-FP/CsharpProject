@@ -1,0 +1,48 @@
+@model gradecardmvc.Models.TeacherTable
+
+@{
+    ViewData["Title"] = "DetailStudent";
+    Layout = "./Layout.cshtml";
+
+}
+
+<style>
+    h2{
+        font-family: 'Times new roman';
+        font-weight:bold;
+        color: white;
+    }
+    body{
+        background-image: url("/image/background4.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    a{
+        color:white;
+    }
+
+</style>
+
+<h2>Faculty Profile Detail</h2>
+
+<div class="container">  
+    <hr />
+    
+        <div class="panel panel-info">
+
+            <div class="panel-heading">
+                Information of Respected Faculty
+             </div>
+
+            <div class="panel-body">
+                
+                @Html.DisplayNameFor(model => model.Id) :  @Html.DisplayFor(model => model.Id)
+                    <br>
+                @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)
+                
+          </div>
+          </div>
+    
+        <a asp-action="getAllFaculty">Go to Faculty List</a>
+</div>

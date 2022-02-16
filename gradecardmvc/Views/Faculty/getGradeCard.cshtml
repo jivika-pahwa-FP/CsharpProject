@@ -1,0 +1,74 @@
+@model IEnumerable<gradecardmvc.Models.StudentTable>
+
+@{
+    ViewData["Title"] = "getGradeCard";
+    Layout = "./Layout.cshtml";
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <style>
+     h2,h3{
+        font-family: 'Times new roman';
+        font-weight:bold;
+        color: white;
+    }
+    body{
+        background-image: url("/image/background4.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    a{
+        color:white;
+    }
+    </style>
+
+<h3>List Of Generated Grade Cards</h3>
+
+<br>
+
+<div class="container">
+  
+
+@foreach (var item in Model) {
+    
+        <div class="panel panel-info">
+
+            <div class="panel-heading">
+          
+                @Html.DisplayNameFor(model => model.Id) :  @Html.DisplayFor(modelItem => item.Id)
+                    <br>
+                @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(modelItem => item.Name)
+
+             </div>
+
+            <div class="panel-body">
+                
+                @Html.DisplayNameFor(model => model.Subject1) - @Html.DisplayFor(modelItem => item.Subject1)
+                <br>
+                @Html.DisplayNameFor(model => model.Subject2) - @Html.DisplayFor(modelItem => item.Subject2)
+                <br>
+                @Html.DisplayNameFor(model => model.Subject3) -  @Html.DisplayFor(modelItem => item.Subject3)
+                <br>
+                @Html.DisplayNameFor(model => model.Percentage) - @Html.DisplayFor(modelItem => item.Percentage)
+                <br>
+                @Html.DisplayNameFor(model => model.Grade) - @Html.DisplayFor(modelItem => item.Grade)
+
+          </div>
+          </div>
+}
+</div>
+</body>
+</html>

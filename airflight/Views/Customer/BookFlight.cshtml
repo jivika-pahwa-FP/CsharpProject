@@ -1,0 +1,67 @@
+@model airflight.Models.BookingDetail
+
+@{
+    ViewData["Title"] = "BookFlight";
+}
+
+<h2>Book your Flight</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="BookFlight">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Bookingid" class="control-label"></label>
+                <input asp-for="Bookingid" class="form-control" readonly/>
+                <span asp-validation-for="Bookingid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Flightid" class="control-label"></label>
+                <input asp-for="Flightid" class="form-control" readonly />
+                <span asp-validation-for="Flightid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Routeid" class="control-label"></label>
+                <input asp-for="Routeid" class="form-control" readonly/>
+                <span asp-validation-for="Routeid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doj" class="control-label"></label>
+                <input asp-for="Doj" class="form-control" readonly/>
+                <span asp-validation-for="Doj" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Numberofpassengers" class="control-label"></label>
+                <input asp-for="Numberofpassengers" id="passenger" class="form-control" onchange="myfunct()" />
+                <span asp-validation-for="Numberofpassengers" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Totalvalue" class="control-label"></label>
+                <input asp-for="Totalvalue" class="form-control" id = "ticketPrice" readonly />
+                <span asp-validation-for="Totalvalue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+    <script type="text/javascript">
+    //window.alert("welcome");
+    function myfunct(){
+    var passenger = document.getElementById("passenger");
+    var ticketPrice = document.getElementById("ticketPrice");
+    ticketPrice.value = ticketPrice.value*passenger.value;
+    }
+
+    </script>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

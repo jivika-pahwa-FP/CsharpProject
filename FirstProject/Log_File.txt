@@ -1,0 +1,63 @@
+Account number : 101 
+ CustomerName : Jivika 
+ CustomerAddress : Delhi 
+ CurrentBalance : 25000 
+Account number : 102 
+ CustomerName : Employee2 
+ CustomerAddress : delhi 
+ CurrentBalance : 26000 
+Account number : 103 	 CustomerName : Employee3 	 CustomerAddress : Noida 	 CurrentBalance : 450000 	 Time : 1/21/2022 2:54:39 AM 
+Account number : 104 	 CustomerName : Employee4 	 CustomerAddress : noida 	 CurrentBalance : 34000 	 Time : 1/21/2022 2:54:58 AM 
+Account number : 106 	 CustomerName : Employee6 	 CustomerAddress : Gurgaon 	 CurrentBalance : 60000 	 Time : 1/21/2022 2:59:59 AM 
+Account number : 101 	 CustomerName : Employee1 	 CustomerAddress : delhi 	 CurrentBalance : 24000 	 Time : 1/21/2022 3:01:15 AM 
+Account number : 101 	 TransactionType : Deposit 	 Time : 1/21/2022 3:01:21 AM 
+Account number : 101 	 CustomerName : ABCD 	 CustomerAddress : Noida 	 CurrentBalance : 20000 	 Time : 1/21/2022 3:04:03 AM 
+Account number : 101 	 TransactionType : Deposited Rs.23000 	 Time : 1/21/2022 3:04:09 AM 
+Account number : 101 	 TransactionType : Withdraw Rs.2000 	 Time : 1/21/2022 3:04:13 AM 
+Account number : 107 	 CustomerName : employee7 	 CustomerAddress : Noida 	 CurrentBalance : 20000 	 Time : 1/21/2022 3:17:35 AM 
+Account number : 101 	 CustomerName : Jivika 	 CustomerAddress : delhi 	 CurrentBalance : 20000 	 Time : 1/21/2022 3:17:58 AM 
+Account number : 101 	 TransactionType : Deposited Rs.23000 	 Time : 1/21/2022 3:18:02 AM 
+Account number : 101 	 TransactionType : Withdraw Rs.2000 	 Time : 1/21/2022 3:18:12 AM 
+Account number : 101 	 CustomerName : Employee1 	 CustomerAddress : delhi 	 CurrentBalance : 2000 	 Time : 1/21/2022 3:54:39 AM 
+Account number : 101 	 TransactionType : Deposited Rs.23000 	 Time : 1/21/2022 3:54:45 AM 
+Account number : 101 	 CustomerName : jivika 	 CustomerAddress : pune 	 CurrentBalance : 1000 	 Time : 1/21/2022 3:56:13 AM 
+Account number : 101 	 TransactionType : Deposited Rs.23000 	 Time : 1/21/2022 3:56:21 AM 
+Account number : 101 	 CustomerName : Jivika 	 CustomerAddress : delhi 	 CurrentBalance : 1000 	 Time : 1/21/2022 3:58:21 AM 
+Account number : 101 	 TransactionType : Deposited Rs.23000 	 Time : 1/21/2022 3:58:27 AM 
+Account number : 101 	 CustomerName : Employee1 	 CustomerAddress : delhi 	 CurrentBalance : 25000 	 Time : 1/24/2022 9:49:13 AM 
+Account number : 102 	 CustomerName : Employee2 	 CustomerAddress : Delhi 	 CurrentBalance : 29000 	 Time : 1/24/2022 9:49:44 AM 
+Account number : 103 	 CustomerName : Employee3 	 CustomerAddress : Noida 	 CurrentBalance : 75000 	 Time : 1/24/2022 11:35:40 AM 
+Account number : 101 	 TransactionType : Deposited Rs.23000 	 Time : 1/24/2022 12:05:38 PM 
+Account number : 101 	 TransactionType : Withdraw Rs.2000 	 Time : 1/24/2022 12:06:54 PM 
+Account number : 101 	 TransactionType : Withdraw Rs.2000 	 Time : 1/24/2022 12:09:48 PM 
+Account number : 104 	 CustomerName : Emoloyee4 	 CustomerAddress : Noida 	 CurrentBalance : 2000 	 Time : 1/25/2022 4:06:58 AM 
+Account number : 101 	 TransactionType : Withdraw Rs.28000 	 Time : 1/25/2022 4:11:25 AM 
+Account number : 105 	 CustomerName : Employee5 	 CustomerAddress : Gurgaon 	 CurrentBalance : 10000 	 Time : 1/25/2022 4:17:14 AM 
+Account number : 105 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 4:21:44 AM 
+Account number : 105 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 4:27:12 AM 
+Account number : 101 	 TransactionType : Withdraw Rs.28000 	 Time : 1/25/2022 4:29:20 AM 
+Account number : 106 	 CustomerName : Employee6 	 CustomerAddress : Noida 	 CurrentBalance : 5000 	 Time : 1/25/2022 4:35:11 AM 
+Account number : 106 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 4:35:19 AM 
+Account number : 106 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 4:55:06 AM 
+Account number : 106 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 4:55:58 AM 
+Account number : 103 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 5:43:49 AM 
+Account number : 101 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 5:47:08 AM 
+Account number : 103 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 5:50:38 AM 
+Account number : 102 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 5:51:18 AM 
+Account number : 102 	 TransactionType : Withdraw Rs.28000 	 Time : 1/25/2022 5:52:42 AM 
+Account number : 102 	 TransactionType : Withdraw Rs.2000 	 Time : 1/25/2022 8:53:56 AM 
+Account number : 101 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 8:54:11 AM 
+Account number : 101 	 TransactionType : Withdraw Rs.2000 	 Time : 1/25/2022 8:55:31 AM 
+Account number : 102 	 TransactionType : Deposited Rs.2000 	 Time : 1/25/2022 8:55:31 AM 
+Account number : 101 	 TransactionType : Withdraw Rs.1000 	 Time : 1/25/2022 8:56:34 AM 
+Account number : 102 	 TransactionType : Deposited Rs.1000 	 Time : 1/25/2022 8:56:34 AM 
+Account number : 101 	 TransactionType : Withdraw Rs.200 	 Time : 1/25/2022 11:16:14 AM 
+Account number : 106 	 TransactionType : Deposited Rs.200 	 Time : 1/25/2022 11:16:15 AM 
+Account number : 104 	 TransactionType : Withdraw Rs.2000 	 Time : 1/26/2022 5:45:00 AM 
+Account number : 105 	 TransactionType : Deposited Rs.2000 	 Time : 1/26/2022 5:45:00 AM 
+Account number : 101 	 TransactionType : Withdraw Rs.5000 	 Time : 1/26/2022 6:16:58 AM 
+Account number : 104 	 TransactionType : Deposited Rs.5000 	 Time : 1/26/2022 6:16:58 AM 
+Account number : 103 	 TransactionType : Withdraw Rs.9000 	 Time : 1/26/2022 8:05:30 AM 
+Account number : 104 	 TransactionType : Deposited Rs.9000 	 Time : 1/26/2022 8:05:30 AM 
+Account number : 101 	 TransactionType : Withdraw Rs.200 	 Time : 2/9/2022 2:23:47 PM 
+Account number : 104 	 TransactionType : Deposited Rs.200 	 Time : 2/9/2022 2:23:48 PM 

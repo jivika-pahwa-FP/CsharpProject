@@ -1,0 +1,58 @@
+@model gradecardmvc.Models.StudentTable
+
+@{
+    ViewData["Title"] = "DetailStudent";
+    Layout = "./Layout.cshtml";
+
+}
+
+<style>
+    h2{
+        font-family: 'Times new roman';
+        font-weight:bold;
+       color: white;
+    }
+    body{
+        background-image: url("/image/background4.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    a{
+        color:white;
+    }
+
+</style>
+
+<h2>Student Profile Detail</h2>
+
+<div class="container">  
+    <hr />
+    
+        <div class="panel panel-info">
+
+            <div class="panel-heading">
+                Information of Respected Student
+             </div>
+
+            <div class="panel-body">
+                
+                @Html.DisplayNameFor(model => model.Id) :  @Html.DisplayFor(model => model.Id)
+                    <br>
+                @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model => model.Name)
+                
+                @Html.DisplayNameFor(model => model.Subject1) - @Html.DisplayFor(model => model.Subject1)
+                <br>
+                @Html.DisplayNameFor(model => model.Subject2) - @Html.DisplayFor(model => model.Subject2)
+                <br>
+                @Html.DisplayNameFor(model => model.Subject3) -  @Html.DisplayFor(model => model.Subject3)
+                <br>
+                @Html.DisplayNameFor(model => model.Percentage) - @Html.DisplayFor(model => model.Percentage)
+                <br>
+                @Html.DisplayNameFor(model => model.Grade) - @Html.DisplayFor(model => model.Grade)
+
+          </div>
+          </div>
+    
+        <a asp-action="getAllStudent">Go to Student List</a>
+</div>

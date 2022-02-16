@@ -1,0 +1,28 @@
+@model IEnumerable<firstmvcproj.Models.Stu>  // for looping through multiple objects in the model we use ienumerabble
+
+<h2><center>Student Data</center></h2>
+<br>
+<h5><a asp-action="AddnewStudent">Add new Student </a></h5>
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Action 1</th>
+            <th>Action 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+           <tr>
+               <td>@item.stud_id</td>
+               <td>@item.stud_name</td>
+               <td><a asp-action="knowmore" asp-route-id= "@item.stud_id"> Click here </a></td>
+               <td><a asp-action="delete" asp-route-id= "@item.stud_id"> Delete </a></td>
+           </tr> 
+        }
+    </tbody>
+
+</table>

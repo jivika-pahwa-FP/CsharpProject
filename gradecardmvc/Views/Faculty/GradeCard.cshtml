@@ -1,0 +1,118 @@
+@model gradecardmvc.Models.StudentTable
+
+@{
+    ViewData["Title"] = "GradeCard";
+    Layout = "./Layout.cshtml";
+
+}
+
+
+<style>
+    h2,h3,form{
+        font-family: 'Times new roman';
+        font-weight:bold;
+        color: white;
+    }
+    body{
+        background-image: url("/image/background4.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    a{
+        color:white;
+    }
+
+</style>
+
+<h3>Generate Grade Card </h3>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="GradeCard">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" value=@Model.Id readonly/>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" value=@Model.Name readonly />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject1" class="control-label"></label>
+                <input asp-for="Subject1" class="form-control" id="sub1" placeholder="Enter Internal Marks" onchange="CalculatePercentage()"/>
+                <span asp-validation-for="Subject1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject2" class="control-label"></label>
+                <input asp-for="Subject2" class="form-control" id="sub2" placeholder="Enter External Marks" onchange="CalculatePercentage()" />
+                <span asp-validation-for="Subject2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject3" class="control-label"></label>
+                <input asp-for="Subject3" class="form-control" id="sub3" placeholder="Enter Assignment Marks" onchange="CalculatePercentage()"/>
+                <span asp-validation-for="Subject3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Percentage" class="control-label"></label>
+                <input asp-for="Percentage" class="form-control" id="percentage" placeholder="Percentage will be generated automatically" readonly/>
+                <span asp-validation-for="Percentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grade" class="control-label"></label>
+                <input asp-for="Grade" class="form-control" id="grade" placeholder="Grade will be generated automatically" readonly/>
+                <span asp-validation-for="Grade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-warning" />
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+
+    function CalculatePercentage(){
+
+    var sub1 = document.getElementById("sub1").value;
+    var sub2 = document.getElementById("sub2").value;
+    var sub3 = document.getElementById("sub3").value;
+
+    var percentage = document.getElementById("percentage");
+    var grade = document.getElementById("grade");
+
+    var marks = Number(sub1)+Number(sub2)+Number(sub3);
+    marks = marks/3;
+    percentage.value = marks.toFixed(2);
+
+    if(percentage.value >= 90){
+        grade.value = "A+";
+    }
+    else if(percentage.value >= 80){
+        grade.value = "A";
+    }
+    else if(percentage.value >= 70){
+        grade.value = "B+";
+    }
+   else if(percentage.value >= 60){
+        grade.value = "B";
+    }
+    else{
+        grade.value = "C";
+    }
+
+    }
+
+</script>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

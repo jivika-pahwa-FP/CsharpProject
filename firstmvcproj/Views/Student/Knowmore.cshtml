@@ -1,0 +1,22 @@
+@model firstmvcproj.Models.Stu
+
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Age</th>
+        </tr>
+    </thead>
+    <tbody>
+           <tr>
+               <td>@Model.stud_id</td>
+               <td>@Model.stud_name</td>
+               <td>@Model.stud_age</td>
+           </tr> 
+    </tbody>
+
+</table>
+
+<h5><a asp-action="GetStudentDetails">Go Back</a></h5>

@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<h1> Add Employee </h1>
+</html>
+
+
+ <div class="form-group">
+    <label for="id">Student Id:</label>
+    <input type="number" class="form-control" id="id" />
+</div>
+<div class="form-group">
+    <label for="name">Student Name:</label>
+    <input type="text" class="form-control" id="name" />
+</div>
+<div class="form-group">
+    <label for="age">Age:</label>
+    <input type="number" class="form-control" id="age" />
+</div>
+<div class="text-center panel-body">
+    <button type="submit" class="btn btn-sm btn-primary" id="AddButton">Add</button>
+</div>
+ 
+<div style="display:none" id="resultDiv">
+    <h2>Employee</h2>
+    <table class="table">
+        <thead><tr><th>ID</th><th>Name</th><th>Age</th></tr></thead>
+        <tbody></tbody>
+    </table>
+</div> 
+<script>
+
+$("#AddButton").click(function (e) {
+    $.ajax({
+        url: "https://localhost:5001/api/Student/AddData",
+        headers:{
+        'Content-Type':'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin':'*',
+        'Access-Control-Allow-Method':'*'},
+       type: "post",
+        contentType: "application/json",
+        data: JSON.stringify({
+            id: $("#id").val(),
+            name: $("#name").val(),
+            age: $("#age").val()
+        }),
+        success: function (result, status, xhr) {
+            var str = "<tr><td>" + result["id"] + "</td><td>" + result["name"] + "</td><td>" + result["age"] + "</td></tr>";
+            $("table tbody").append(str);
+            $("#resultDiv").show();
+             console.log(str);
+        },
+        error: function (xhr, status, error) {
+            console.log(xhr)
+        }
+    });
+});
+
+</script> 
+
+<a href="getemp.html" > List All Employees </a>

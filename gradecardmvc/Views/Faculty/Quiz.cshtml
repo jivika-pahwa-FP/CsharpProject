@@ -1,0 +1,92 @@
+@model gradecardmvc.Models.StudentTable
+
+@{
+    ViewData["Title"] = "DetailStudent";
+    Layout = "./Layout.cshtml";
+
+}
+
+<style>
+    h2{
+        font-family: 'Times new roman';
+        font-weight:bold;
+       color: white;
+    }
+    body{
+        background-image: url("/image/background4.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    a{
+        color:white;
+    }
+
+</style>
+
+<h2>Attempt  Quiz</h2>
+
+<div class="container">  
+    <hr />
+    
+        <div class="panel panel-info">
+
+            <div class="panel-heading">
+                Choose the appropriate option
+             </div>
+
+            <div class="panel-body">
+                <form action="">
+
+                <div>
+                   <h3>1) HTML stands for </h3> 
+                   <input type="radio" name="opt1" value="HTML" onclick="check()"> Hypertext transfer Markup Language
+                   <input type="radio" name="opt1"  value="2" onclick="check()"> Hypertext  Markup Language
+                </div>
+
+                <div>
+                   <h3>2) JS stands for </h3> 
+                   <input type="radio" name="opt2" id="true" value="JS" onclick="check()"> JavaScript
+                   <input type="radio" name="opt2" id="false" value="2">JavaScript
+                </div>
+
+                @* <div>
+                   <h3>3) CSS stands for </h3> 
+                   <input type="radio" name="opt" id="true" value="1" onclick="check()">Cascading Style Sheet
+                   <input type="radio" name="opt" id="false" value="2"> Cascading Stylish Sheet
+                </div>  *@
+
+                <p id="result">result</p>
+
+                </form>
+
+          </div>
+          </div>
+    <script>
+        var marks = 0;
+        var ques1 = document.getElementsByName("opt1");
+        var ques2 = document.getElementsByName("opt2");
+        var ques3 = document.getElementsByName("opt3");
+        var ques4 = document.getElementsByName("opt4");
+        var ques5 = document.getElementsByName("opt5");
+
+        var ans = ["HTML","CSS","JS","SQL","DBMS"];
+
+        var result = document.getElementById("result");
+
+        function check(){
+            for(var i = 0 ; i < 5 ; i++){
+                    if(ques1[i].checked){
+                        if(ques1[i].value == "HTML" )
+                        console.log(" HTML Correct Answer");
+                    }
+                    if(ques2[i].checked){
+                        if(ques2[i].value == "JS" )
+                        console.log(" JS Correct Answer");
+                    }
+            }
+        }
+
+        
+    </script>
+</div>

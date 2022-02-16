@@ -1,0 +1,75 @@
+@model IEnumerable<airflight.Models.FlightDetail>
+
+@{
+    ViewData["Title"] = "Book your Flight";
+}
+
+<h2>Welcome, @ViewBag.customerName </h2>
+<h3>@ViewBag.Title</h3>
+
+<button class="btn btn-danger"> <a asp-action="Logout" style="color:white;">Logout</a> </button>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Flightid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flightname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Source)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Departuretime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Arrivaltime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Totalcapacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costperseat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flightid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Flightname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Source)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departuretime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrivaltime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Totalcapacity) seats
+            </td>
+            <td>
+                Rs.@Html.DisplayFor(modelItem => item.Costperseat)
+            </td>
+            <td>
+                <button class="btn btn-warning"> @Html.ActionLink(" Book Flight ", "BookFlight", new {  id=item.Flightid }) </button>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,79 @@
+@model gradecardmvc.Models.StudentTable
+
+@{
+    ViewData["Title"] = "CreateStudent";
+    Layout = "./Layout.cshtml";
+
+}
+
+<style>
+    h2,form{
+        font-family: 'Times new roman';
+        font-weight:bold;
+    }
+
+</style>
+
+<h2 style="color:dodgerBlue">Create Student Profile</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateStudent">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" placeholder="Enter Student ID" value=@ViewBag.StudentID readonly/>
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" placeholder="Enter Student Name" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject1" class="control-label"></label>
+                <input asp-for="Subject1" class="form-control" placeholder="Enter Internal Marks" />
+                <span asp-validation-for="Subject1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject2" class="control-label"></label>
+                <input asp-for="Subject2" class="form-control" placeholder="Enter External Marks" />
+                <span asp-validation-for="Subject2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject3" class="control-label"></label>
+                <input asp-for="Subject3" class="form-control" placeholder="Enter Assignment Marks" />
+                <span asp-validation-for="Subject3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Percentage" class="control-label"></label>
+                <input asp-for="Percentage" class="form-control" placeholder="Percentage will be generated automatically" readonly/>
+                <span asp-validation-for="Percentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Grade" class="control-label"></label>
+                <input asp-for="Grade" class="form-control" placeholder="Grade will be generated automatically" readonly />
+                <span asp-validation-for="Grade" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" placeholder="Enter Student Password"/>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+        <a asp-action="getAllStudent">Go to Student List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
