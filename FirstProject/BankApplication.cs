@@ -4,7 +4,7 @@ using BankLibrary;
 using BankFunctionality;
 
 public class BankApplication{
-         public static void Main(string[] args)
+         public static void main(string[] args)
         {
 
             List<SBAccountClass> list = new List<SBAccountClass>();
