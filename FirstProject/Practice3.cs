@@ -7,6 +7,7 @@ namespace FirstProject
 
         public delegate void heyDelegate();
         public delegate void MultiDelegate(int a,int b);
+        public delegate void InlineDelegate(string msg);
 
         public void heyFunction(){
             System.Console.WriteLine(" called through delegate....");
@@ -22,7 +23,7 @@ namespace FirstProject
             System.Console.WriteLine(" Multiplication : {0}",(a*b) );
         }
 
-        public static void Main()
+        public static void main()
         {
 
             Console.WriteLine("Delegation and Multidelegation ");
@@ -35,8 +36,13 @@ namespace FirstProject
             MultiDelegate m3 = new MultiDelegate(p.mult);
             MultiDelegate m4 = m1+m2+m3;
 
+            InlineDelegate i = delegate(string a){
+                System.Console.WriteLine(a);
+            };
+
             obj();
             m4(80,50);
+            i("This is inline or anonymous function");
 
         }
 
