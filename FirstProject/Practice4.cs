@@ -6,7 +6,7 @@ namespace FirstProject{
 
     class Practice4{
 
-        public static void Main() {
+        public static void main() {
             
             int[] arr = {2,3,4,5,67,8};
 
